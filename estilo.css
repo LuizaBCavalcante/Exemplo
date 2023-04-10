@@ -1,4 +1,16 @@
-p{
+body{
+    font-family: "Helvetica", "Lucida Grande", sans-serif;
+    color: #3D3D3D;
+}
+ h1{
+    background-color: #E1EDF2;
+ }
+ h2{
+    border-bottom: 2px solid black;
+
+ }
+figure{
     text-align: center;
-    text-decoration: underline;
+    background-color: whitesmoke;
+    border: 1px solid lightgray 
 }
