@@ -9,10 +9,44 @@
     <title>--Formulário Contato--</title>
 </head>
 <body>
+    <script type="text/javascript">
+        function validar(){
+             var nome = document.getElementById("nome");
+             var fone = document.getElementById("fone");
+             var email = document.getElementById("email");
+             var msg = document.getElementById("msg")
+
+             if(nome.value == "" || nome.value.length<10){
+                 alert("Insira o nome completo");
+                 nome.focus();
+                 return false;
+             }
+             if(fone.value == "" || fone.value.length !=10){
+                 alert("Insira um número de telefone válido");
+                 fone.focus();
+                 return false;
+             }
+             if(email.value == "" ||email.value.indexOf("@")==-1 ||email.value.indexOf(".")==-1){
+                 alert("Insira um e-mail válido");
+                 email.focus();
+                 return false;
+             }
+             if(msg.value == "" || msg.value.length <10 || msg.value.length>50){
+                 alert("Digite uma mensagem: Mín. 10 caracteres e Max. 50 caracteres");
+                 msg.focus();
+                 return false;
+             }
+             
+             var form = document.getElementById("form");
+             form.submit();
+
+             
+         }
+     </script>
     <img src="img/logo.svg" alt="logo musicdot">
     <h1 class="titulo"> Entre em contato</h1>
     
-    <form name ="contato">
+    <form method="post" name="contato" id="form">
         <div>
             <input name = "nome" type="text" id="nome" placeholder="Nome" required/>
             <label for="nome">Nome</label>
@@ -30,9 +64,11 @@
             <label for="msg"></label>
         </div>
         <div class="botão">
-            <button type="submit">Enviar</button>
-        </div>
+            <button type="button"  onclick="validar()">Enviar</button>
+        </div> 
+
 
     </form>
+
 </body>
 </html>
